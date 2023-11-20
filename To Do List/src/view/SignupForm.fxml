@@ -27,7 +27,7 @@
       </Label>
       <PasswordField layoutX="48.0" layoutY="324.0" prefHeight="25.0" prefWidth="272.0" />
       <Button layoutX="51.0" layoutY="479.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="272.0" text="Register" />
-      <Label layoutX="123.0" layoutY="539.0" text="Click to login." textFill="#7972c3" underline="true">
+      <Label layoutX="148.0" layoutY="537.0" text="Click to login." textFill="#7972c3" underline="true">
          <font>
             <Font size="13.0" />
          </font>
