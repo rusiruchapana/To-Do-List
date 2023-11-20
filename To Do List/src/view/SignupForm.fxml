@@ -1,14 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="controller.SignupFormController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="611.0" prefWidth="367.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginFormController">
+   <children>
+      <Label layoutX="115.0" layoutY="42.0" text="Create New Account">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="48.0" layoutY="129.0" text="Username">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <TextField layoutX="48.0" layoutY="160.0" prefHeight="25.0" prefWidth="272.0" />
+      <Label layoutX="48.0" layoutY="287.0" text="New Password">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <PasswordField layoutX="48.0" layoutY="324.0" prefHeight="25.0" prefWidth="272.0" />
+      <Button layoutX="51.0" layoutY="479.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="272.0" text="Register" />
+      <Label layoutX="123.0" layoutY="539.0" text="Click to login." textFill="#7972c3" underline="true">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="48.0" layoutY="206.0" text="Email">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <TextField layoutX="48.0" layoutY="237.0" prefHeight="25.0" prefWidth="272.0" />
+      <Label layoutX="51.0" layoutY="370.0" text="Confirm Password">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <PasswordField layoutX="51.0" layoutY="407.0" prefHeight="25.0" prefWidth="272.0" />
+   </children>
 </AnchorPane>
