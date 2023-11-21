@@ -2,6 +2,7 @@ package controller;
 
 import db.DB_Connect;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
@@ -17,6 +18,9 @@ public class LoginFormController {
     public PasswordField fldPassword;
     public TextField fldEmail;
     public PasswordField fldConfirmPassword;
+    public Label lblUsernameError;
+
+
 
 
 
@@ -36,6 +40,12 @@ public class LoginFormController {
             String confirmPassword= fldConfirmPassword.getText();
 
         try {
+            if(username.isEmpty()){
+                    lblUsernameError.setText("Username is empty.");
+            }
+
+
+
             String sql= "insert into operation (username,email,password,confirmPassword) values('"+username+"','"+email+"','"+password+"','"+confirmPassword+"')";
             pst= conn.prepareStatement(sql);
             pst.execute();

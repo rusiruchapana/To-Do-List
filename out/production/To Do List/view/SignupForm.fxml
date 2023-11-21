@@ -44,5 +44,6 @@
          </font>
       </Label>
       <PasswordField fx:id="fldConfirmPassword" layoutX="51.0" layoutY="407.0" prefHeight="25.0" prefWidth="272.0" />
+      <Label fx:id="lblUsernameError" layoutX="134.0" layoutY="190.0" prefHeight="17.0" prefWidth="184.0" textFill="#eb1111" />
    </children>
 </AnchorPane>
