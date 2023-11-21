@@ -19,14 +19,14 @@
             <Font size="13.0" />
          </font>
       </Label>
-      <TextField layoutX="48.0" layoutY="160.0" prefHeight="25.0" prefWidth="272.0" />
-      <Label layoutX="48.0" layoutY="287.0" text="New Password">
+      <TextField fx:id="fldUserName" layoutX="48.0" layoutY="165.0" prefHeight="25.0" prefWidth="272.0" />
+      <Label layoutX="48.0" layoutY="287.0" text="Password">
          <font>
             <Font size="13.0" />
          </font>
       </Label>
-      <PasswordField layoutX="48.0" layoutY="324.0" prefHeight="25.0" prefWidth="272.0" />
-      <Button layoutX="51.0" layoutY="479.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="272.0" text="Register" />
+      <PasswordField fx:id="fldPassword" layoutX="48.0" layoutY="324.0" prefHeight="25.0" prefWidth="272.0" />
+      <Button fx:id="btnRgstr" layoutX="51.0" layoutY="479.0" mnemonicParsing="false" onMouseClicked="#btnRgstrOnMouseClicked" prefHeight="46.0" prefWidth="272.0" text="Register" />
       <Label layoutX="148.0" layoutY="537.0" text="Click to login." textFill="#7972c3" underline="true">
          <font>
             <Font size="13.0" />
@@ -37,12 +37,12 @@
             <Font size="13.0" />
          </font>
       </Label>
-      <TextField layoutX="48.0" layoutY="237.0" prefHeight="25.0" prefWidth="272.0" />
+      <TextField fx:id="fldEmail" layoutX="48.0" layoutY="237.0" prefHeight="25.0" prefWidth="272.0" />
       <Label layoutX="51.0" layoutY="370.0" text="Confirm Password">
          <font>
             <Font size="13.0" />
          </font>
       </Label>
-      <PasswordField layoutX="51.0" layoutY="407.0" prefHeight="25.0" prefWidth="272.0" />
+      <PasswordField fx:id="fldConfirmPassword" layoutX="51.0" layoutY="407.0" prefHeight="25.0" prefWidth="272.0" />
    </children>
 </AnchorPane>
