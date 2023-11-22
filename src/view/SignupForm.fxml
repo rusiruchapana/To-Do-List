@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="611.0" prefWidth="367.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginFormController">
+<AnchorPane prefHeight="611.0" prefWidth="367.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SignupFormController">
    <children>
       <Label layoutX="115.0" layoutY="42.0" text="Create New Account">
          <font>
@@ -45,5 +45,8 @@
       </Label>
       <PasswordField fx:id="fldConfirmPassword" layoutX="51.0" layoutY="407.0" prefHeight="25.0" prefWidth="272.0" />
       <Label fx:id="lblUsernameError" layoutX="134.0" layoutY="190.0" prefHeight="17.0" prefWidth="184.0" textFill="#eb1111" />
+      <Label fx:id="lblEmailError" layoutX="134.0" layoutY="262.0" prefHeight="17.0" prefWidth="184.0" textFill="#eb1111" />
+      <Label fx:id="lblPasswordError" layoutX="139.0" layoutY="349.0" prefHeight="17.0" prefWidth="184.0" textFill="#eb1111" />
+      <Label fx:id="lblConfirmPasswordError" layoutX="139.0" layoutY="432.0" prefHeight="17.0" prefWidth="184.0" textFill="#eb1111" />
    </children>
 </AnchorPane>
