@@ -29,6 +29,13 @@ public class LoginFormController {
     public Label lblUsernameError;
     public Label lblPasswordError;
 
+    Connection conn = null;
+    PreparedStatement pst = null;
+    ResultSet rs = null;
+
+    public void initialize(){
+            conn = DB_Connect.connect();
+    }
 
 
     public void lblRegisterOnMouseClicked(MouseEvent mouseEvent) throws IOException {
@@ -40,14 +47,11 @@ public class LoginFormController {
             stage.setTitle("Register form");
             stage.centerOnScreen();
             stage.show();
-
-
-
-
-
     }
 
-    public void btnLoginOnMouseClicked(MouseEvent mouseEvent) {
+
+
+    public void btnLoginOnMouseClicked(MouseEvent mouseEvent) throws IOException {
 
             String username = txtUser.getText();
             String password = passwordPassword.getText();
@@ -65,9 +69,36 @@ public class LoginFormController {
             }
 
             if(errorsCount==0){
-                
+
+                try {
+                    String query = "select * from operation where username=? and password=?";
+                    pst = conn.prepareStatement(query);
+
+                    pst.setString(1,username);
+                    pst.setString(2,password);
+
+                    rs = pst.executeQuery();
+
+                    if(rs.next()){
+                        Parent parent = FXMLLoader.load(this.getClass().getResource("../view/DashboardForm.fxml"));
+                        Scene scene = new Scene(parent);
+                        Stage stage = (Stage) root.getScene().getWindow();
+
+                        stage.setScene(scene);
+                        stage.setTitle("Dashboard form");
+                        stage.centerOnScreen();
+                        stage.show();
 
 
+                    }else{
+                        JOptionPane.showMessageDialog(null, "Are your sure if user is registered.");
+                    }
+
+
+
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
 
 
             }else{
