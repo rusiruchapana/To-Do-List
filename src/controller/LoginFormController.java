@@ -102,7 +102,9 @@ public class LoginFormController {
 
 
             }else{
-                JOptionPane.showMessageDialog(null,"Field's are not filled.");
+
+                    JOptionPane.showMessageDialog(null,"Field's are not filled.");
+
             }
 
 
