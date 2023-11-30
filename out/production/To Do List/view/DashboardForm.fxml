@@ -46,7 +46,12 @@
                </font>
             </Label>
             <TextField fx:id="txtFieldTaskName" layoutX="14.0" layoutY="44.0" prefHeight="25.0" prefWidth="383.0" />
-            <Button fx:id="btnAddToList" layoutX="221.0" layoutY="84.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="177.0" text="Add To List" />
+            <Button fx:id="btnAddToList" layoutX="221.0" layoutY="98.0" mnemonicParsing="false" onMouseClicked="#btnAddToListOnMouseClicked" prefHeight="32.0" prefWidth="177.0" text="Add To List" />
+            <Label fx:id="lblTaskNameError" layoutX="195.0" layoutY="69.0" prefHeight="0.0" prefWidth="203.0" textFill="#f52803">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
       <Button fx:id="btnLogout" layoutX="361.0" layoutY="475.0" mnemonicParsing="false" onMouseClicked="#btnLogoutOnMouseClicked" prefHeight="32.0" prefWidth="80.0" text="Log out">
