@@ -45,10 +45,22 @@ public class DashboardFormController {
                         ObservableList<ListViewTM> tasks = listViewSet.getItems();
                         ListViewTM newListItem = new ListViewTM(taskName);
                         tasks.add(newListItem);
+
+
+                        tasks.setCellFactory(param -> new ListCell<ListViewTM>() {
+                            @Override
+                            protected void updateItem(ListViewTM item, boolean empty) {
+                                super.updateItem(item, empty);
+                                if (empty || item == null) {
+                                    setText(null);
+                                } else {
+                                    setText(item.getLists()); // Set the text of the cell to the object's name
+                                }
+                            }
+                        });
+
+
                         listViewSet.refresh();
-
-
-
 
             }
 
