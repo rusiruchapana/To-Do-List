@@ -8,19 +8,20 @@ import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import tm.ListViewTM;
 
 import java.io.IOException;
 
 public class DashboardFormController {
     public AnchorPane root;
-    public ListView<ListViewTM> listViewSet;
+    public ListView<String> listViewSet;
     public TextField txtFieldTaskName;
     public Button btnLogout;
     public Button btnAddToList;
     public Label lblTaskNameError;
 
-
+    public void initialize(){
+            listViewSet.refresh();
+    }
 
 
     public void btnLogoutOnMouseClicked(MouseEvent mouseEvent) throws IOException {
@@ -42,25 +43,11 @@ public class DashboardFormController {
                         lblTaskNameError.setText("Task Name field is empty.");
 
             }else{
-                        ObservableList<ListViewTM> tasks = listViewSet.getItems();
-                        ListViewTM newListItem = new ListViewTM(taskName);
-                        tasks.add(newListItem);
+                    ObservableList<String> taskLists = listViewSet.getItems();
+                    taskLists.add(taskName);
 
+                    txtFieldTaskName.setText("");
 
-                        tasks.setCellFactory(param -> new ListCell<ListViewTM>() {
-                            @Override
-                            protected void updateItem(ListViewTM item, boolean empty) {
-                                super.updateItem(item, empty);
-                                if (empty || item == null) {
-                                    setText(null);
-                                } else {
-                                    setText(item.getLists()); // Set the text of the cell to the object's name
-                                }
-                            }
-                        });
-
-
-                        listViewSet.refresh();
 
             }
 
