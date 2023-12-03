@@ -17,6 +17,7 @@ public class DashboardFormController {
     public TextField txtFieldTaskName;
     public Button btnLogout;
     public Button btnAddToList;
+    
     public Label lblTaskNameError;
 
     public void initialize(){
