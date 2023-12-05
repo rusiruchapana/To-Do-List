@@ -1,5 +1,6 @@
 package controller;
 
+
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -9,7 +10,9 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
+
 import java.io.IOException;
+
 
 public class DashboardFormController {
     public AnchorPane root;
@@ -17,12 +20,21 @@ public class DashboardFormController {
     public TextField txtFieldTaskName;
     public Button btnLogout;
     public Button btnAddToList;
-    
+
     public Label lblTaskNameError;
+    public TextField changeTaskField;
+    public Button btnDelete;
+    public Button btnUpdate;
+
 
     public void initialize(){
-            listViewSet.refresh();
+        listViewSet.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue != null) {
+                    changeTaskField.setText(newValue);
+            }
+        });
     }
+
 
 
     public void btnLogoutOnMouseClicked(MouseEvent mouseEvent) throws IOException {
@@ -34,23 +46,39 @@ public class DashboardFormController {
             stage.centerOnScreen();
             stage.show();
 
+
+
     }
 
     public void btnAddToListOnMouseClicked(MouseEvent mouseEvent) {
+
             String taskName = txtFieldTaskName.getText();
+
 
 
             if(taskName.isEmpty()){
                         lblTaskNameError.setText("Task Name field is empty.");
 
             }else{
-                    ObservableList<String> taskLists = listViewSet.getItems();
-                    taskLists.add(taskName);
-
-                    txtFieldTaskName.setText("");
-
-
+                        listViewSet.getItems().add(taskName);
+                        txtFieldTaskName.setText("");
             }
 
+
+    }
+
+
+    public void btnUpdateOnMouseClicked(MouseEvent mouseEvent) {
+            String updatedTask = changeTaskField.getText();
+
+            int selectedId = listViewSet.getSelectionModel().getSelectedIndex();
+            listViewSet.getItems().remove(selectedId);
+            listViewSet.getItems().add(updatedTask);
+            changeTaskField.setText("");
+    }
+
+    public void btnDeleteOnMouseClicked(MouseEvent mouseEvent) {
+            int selectedId = listViewSet.getSelectionModel().getSelectedIndex();
+            listViewSet.getItems().remove(selectedId);
     }
 }

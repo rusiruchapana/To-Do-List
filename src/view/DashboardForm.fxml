@@ -19,8 +19,8 @@
          </font>
       </Label>
       <Label layoutX="699.0" layoutY="14.0" prefHeight="20.0" prefWidth="53.0" />
-      <TextField layoutX="361.0" layoutY="90.0" prefHeight="38.0" prefWidth="412.0" />
-      <Button layoutX="543.0" layoutY="141.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="106.0" style="-fx-background-color: red;" text="Delete">
+      <TextField fx:id="changeTaskField" layoutX="361.0" layoutY="90.0" prefHeight="38.0" prefWidth="412.0" />
+      <Button fx:id="btnDelete" layoutX="543.0" layoutY="141.0" mnemonicParsing="false" onMouseClicked="#btnDeleteOnMouseClicked" prefHeight="25.0" prefWidth="106.0" style="-fx-background-color: red;" text="Delete">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -28,7 +28,7 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="667.0" layoutY="141.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="106.0" style="-fx-background-color: yellow;" text="Update">
+      <Button fx:id="btnUpdate" layoutX="667.0" layoutY="141.0" mnemonicParsing="false" onMouseClicked="#btnUpdateOnMouseClicked" prefHeight="25.0" prefWidth="106.0" style="-fx-background-color: yellow;" text="Update">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
