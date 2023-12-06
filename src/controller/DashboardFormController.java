@@ -25,6 +25,7 @@ public class DashboardFormController {
     public TextField changeTaskField;
     public Button btnDelete;
     public Button btnUpdate;
+    public Button btnAddNewToDo;
 
 
     public void initialize(){
@@ -61,7 +62,7 @@ public class DashboardFormController {
 
             }else{
                         listViewSet.getItems().add(taskName);
-                        txtFieldTaskName.setText("");
+
             }
 
 
@@ -73,12 +74,16 @@ public class DashboardFormController {
 
             int selectedId = listViewSet.getSelectionModel().getSelectedIndex();
             listViewSet.getItems().remove(selectedId);
-            listViewSet.getItems().add(updatedTask);
+            listViewSet.getItems().add(selectedId , updatedTask);
             changeTaskField.setText("");
     }
 
     public void btnDeleteOnMouseClicked(MouseEvent mouseEvent) {
             int selectedId = listViewSet.getSelectionModel().getSelectedIndex();
             listViewSet.getItems().remove(selectedId);
+    }
+
+    public void btnAddNewToDoOnMouseClicked(MouseEvent mouseEvent) {
+            txtFieldTaskName.setText("");
     }
 }

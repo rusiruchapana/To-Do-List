@@ -63,6 +63,8 @@ public class SignupFormController {
             if(username.isEmpty()){
                 lblUsernameError.setText("Username is empty.");
                 errors++;
+            }else {
+                lblUsernameError.setText("");
             }
 
             if(email.isEmpty()){
@@ -78,6 +80,8 @@ public class SignupFormController {
                     if(!isvalid){
                         lblEmailError.setText("Email is not a valid Email.");
                         errors++;
+                    }else{
+                        lblEmailError.setText("");
                     }
 
             }
@@ -87,6 +91,8 @@ public class SignupFormController {
             if(password.isEmpty()){
                     lblPasswordError.setText("Password is Empty.");
                     errors++;
+            }else {
+                    lblPasswordError.setText("");
             }
 
 
@@ -98,6 +104,7 @@ public class SignupFormController {
             }else{
                     if(!confirmPassword.equals(password)){
                           lblConfirmPasswordError.setText("Given 2 passwords are not same.");
+
                           errors++;
                     }
             }
